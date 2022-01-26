@@ -37,7 +37,7 @@ let showUI = () => {
   fs.writeFileSync(path.join(process.cwd(), html_filename), app_html);
   nw.Window.open(html_filename, {}, function(win) {
     win.width = 300;
-    win.height = 600;
+    win.height = 300;
     win.on('close', function () {
       try {
         fs.unlinkSync(path.join(process.cwd(), html_filename));
