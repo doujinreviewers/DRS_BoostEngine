@@ -49,5 +49,8 @@ export default {
       nw.Window.get().window.dispatchEvent(event);
     },
   },
+  mounted: function(){
+    this.value = parseInt(document.getElementById('currentSpeed').textContent, 10);
+  }
 }
 </script>

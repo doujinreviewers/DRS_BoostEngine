@@ -18,7 +18,7 @@ SceneManager.update = function(deltaTime) {
 
 Input.keyMapper[18] = 'alt';
 
-let app_html = `
+let root_html = `
 <!DOCTYPE html>
 <html>
   <head>
@@ -27,14 +27,15 @@ let app_html = `
   </head>
   <body>
     <div id="app"></div>
-    <script>${prebundlejs}</script>
-  </body>
-</html>
-`
+`;
+let app_html=`<script>${prebundlejs}</script>`;
+
 const html_filename = "DRS_BoostEngine_MainWindow.html";
 
 let showUI = () => {
-  fs.writeFileSync(path.join(process.cwd(), html_filename), app_html);
+  let speed_html = `<div id="currentSpeed">${speed}</div>`;
+  let render_html = root_html + speed_html + app_html +`</body></html>`;
+  fs.writeFileSync(path.join(process.cwd(), html_filename), render_html);
   nw.Window.open(html_filename, {}, function(win) {
     win.width = 300;
     win.height = 300;
@@ -54,8 +55,12 @@ let showUI = () => {
   })
 }
 
+let speedList = ['1','2','3','4','5','6','7','8','9'];
+
 nw.Window.get().window.addEventListener("keydown", function(e){
   if(e.altKey && e.key === 'b') {
     showUI();
+  }else if(e.altKey && speedList.includes(e.key)){
+    speed = parseInt(e.key, 10);
   }
 });
