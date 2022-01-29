@@ -1,6 +1,6 @@
 # RPGツクールMZ用ゲームスピード変更プラグイン
 
-このプラグインを導入したゲームでは、Alt+bキーかAlt+1～9でプレイヤーがいつでも任意に動作速度を変更できるようになります。MV版は[こちら](https://github.com/doujinreviewers/DRS_BoostEngineMV)
+このプラグインを導入したゲームでは、Alt+bキーかAlt+1～9でプレイヤーがいつでも任意に動作速度を変更できるようになります。1～10倍速まで対応。MV版は[こちら](https://github.com/doujinreviewers/DRS_BoostEngineMV)
 
 ## 使い方
 ### Alt+bキーでUIを表示する
